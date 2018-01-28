@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="//apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+    <script src="//cdn.bootcss.com/angular.js/1.6.1/angular.min.js"></script>
+    <script src="https://cdn.bootcss.com/angular-ui-router/1.0.3/angular-ui-router.js"></script>
+    <script src="//cdn.bootcss.com/angular.js/1.6.1/angular-animate.js"></script>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="log-in">萝卜多后台登陆</div>
+        <div class="use">
+            <span class="user">admin</span>
+            <span class="glyphicon glyphicon-off"></span>
+        </div>
+    </div>
+</header>
+<main ng-controller="textController">
+    <div class="sidebar">
+        <div class="info">信息管理   <span class="trangile1"></span></div>
+        <a ui-sref="page1"> <p id="info1">学员信息</p></a>
+        <div class="list">Article管理  <span class="trangile2"></span></div>
+        <a ui-sref="page2"><p id="list1">article信息</p></a>
+    </div>
+   <div class="artical">
+       <div ui-view></div>
+   </div>
+</main>
+
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>

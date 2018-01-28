@@ -1,0 +1,109 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  font-size: 62.5%;
+}
+header{
+  width: 100%;
+  height: 5rem;
+  line-height: 5rem;
+  background: #0f0f0f;
+  .log-in{
+    font-size: 2rem;
+    color: #fff;
+    float: left;
+  }
+  .use{
+    height: 5rem;
+    float: right;
+    .user{
+      color: #fff;
+      font-size: 2rem;
+    }
+    .glyphicon{
+      display: inline;
+      margin-left: 3rem;
+      color: #fff;
+      font-size: 2rem;
+      &:hover{
+        cursor: pointer;
+        background: #a0a0a0;
+      }
+    }
+  }
+}
+main{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  .sidebar{
+    width: 20%;
+    height: 100vh;
+    background: #f0f0f0;
+    text-align: center;
+    overflow: hidden;
+  }
+  .artical{
+    width: 80%;
+    height: 100vh;
+    font-size: 3rem;
+    //background: #f0f0f0;
+  }
+  .info{
+    margin-top: 2rem ;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #0f0f0f;
+    cursor: pointer;
+  }
+  .list{
+    @extend .info;
+  }
+  .trangile1{
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-right: 2px solid #000;
+    border-top: 2px solid #000;
+    transform: rotate(45deg);
+  }
+  .trangile2{
+    @extend .trangile1;
+  }
+  #info1{
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    display: none;
+  }
+  #list1{
+    @extend #info1
+  }
+}
+
+.choose {
+  height: 10rem;
+  margin: 2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: 1px solid #a0a0a0;
+  input {
+    width: 20%;
+    height: 3rem;
+    margin: 1rem;
+  }
+}
+.lists{
+  height: auto;
+  margin: 2rem;
+  border: 1px solid #a0a0a0;
+  .title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+}
+

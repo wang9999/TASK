@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-size: 62.5%; }
+
+header {
+  width: 100%;
+  height: 5rem;
+  line-height: 5rem;
+  background: #0f0f0f; }
+  header .log-in {
+    font-size: 2rem;
+    color: #fff;
+    float: left; }
+  header .use {
+    height: 5rem;
+    float: right; }
+    header .use .user {
+      color: #fff;
+      font-size: 2rem; }
+    header .use .glyphicon {
+      display: inline;
+      margin-left: 3rem;
+      color: #fff;
+      font-size: 2rem; }
+      header .use .glyphicon:hover {
+        cursor: pointer;
+        background: #a0a0a0; }
+
+main {
+  display: flex;
+  justify-content: space-between;
+  width: 100%; }
+  main .sidebar {
+    width: 20%;
+    height: 100vh;
+    background: #f0f0f0;
+    text-align: center;
+    overflow: hidden; }
+  main .artical {
+    width: 80%;
+    height: 100vh;
+    font-size: 3rem; }
+  main .info, main .list {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #0f0f0f;
+    cursor: pointer; }
+  main .trangile1, main .trangile2 {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-right: 2px solid #000;
+    border-top: 2px solid #000;
+    transform: rotate(45deg); }
+  main #info1, main #list1 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    display: none; }
+
+.choose {
+  height: 10rem;
+  margin: 2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: 1px solid #a0a0a0; }
+  .choose input {
+    width: 20%;
+    height: 3rem;
+    margin: 1rem; }
+
+.lists {
+  height: auto;
+  margin: 2rem;
+  border: 1px solid #a0a0a0; }
+  .lists .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+
+/*# sourceMappingURL=app.css.map */

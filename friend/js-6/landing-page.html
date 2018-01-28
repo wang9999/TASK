@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/angular.js/1.6.1/angular.min.js"></script>
+    <script src="https://cdn.bootcss.com/angular-ui-router/1.0.3/angular-ui-router.js"></script>
+    <link href="landing-page.css" rel="stylesheet" type="text/css">
+    <title>Title</title>
+</head>
+<body ng-controller="logCtr">
+<div class="area">
+    <p>后台登陆</p>
+    <div class="line">
+        <img src="../js-5/img/user.png"><input type="text" id="name" placeholder="请输入用户名">
+    </div>
+    <div class="line">
+        <img src="../js-5/img/password.png"> <input type="password" id="code" placeholder="请输入密码">
+    </div>
+    <div id="hint"></div>
+    <div class="line1">
+        <button id="submit">登陆</button>
+    </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

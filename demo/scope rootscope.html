@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+<span ng-app="myApp">
+  <style>
+    div{margin-top: 15px;border: 2px solid rebeccapurple;width: 400px;}
+  </style>
+  <div>
+    <h3>我是全局变量language: {{ language}}</h3>
+  </div>
+  <div ng-controller="oneController">
+    <h3>我是one_language局部变量: {{ one_language}}</h3>
+      <h3>{{language}}</h3>
+  </div>
+  <div ng-controller="twoController">
+    <h1>twoController</h1>
+    <h3>我是two_language局部变量: {{ two_language }}</h3>
+    <h3>我是one_language局部变量: {{ one_language}}</h3>
+    <h3>我是全局变量language: {{ language }}</h3>
+  </div>
+    <div ng-controller="threeController"></div>
+</span>
+<script>
+    var   myApp = angular.module('myApp', []);
+    myApp.controller('oneController', ['$scope', '$rootScope', function ($scope, $rootScope) {
+        // 局部的变量，只有在oneController中才会显示
+        $scope.one_language = 'Python';
+        // 全局的变量，都可以调用
+        $rootScope.language = 'Go';
+    }]);
+    myApp.controller('twoController', ['$scope','$rootScope', function ($scope,$rootScope) {
+        // 局部的变量，只有在twoController中才会显示
+        $rootScope.two_language = '全聚德';
+        $scope.two_language = 'Java';
+    }]);
+    myApp.controller('threeController', ['$scope','$rootScope', function ($scope,$rootScope) {
+        $rootScope.language = '全聚德3';
+    }]);
+</script>
+</body>
+</html>

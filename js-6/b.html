@@ -1,0 +1,218 @@
+<span style="font-size:14px;"><!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+
+		<script type="text/javascript" src="angular.min.js"></script>
+		<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+
+		<style type="text/css">
+			* {
+                margin: 0px auto;
+            }
+
+            .div1 {
+                width: 800px;
+            }
+
+            table {
+                width: 800px;
+                margin-top: 10px;
+            }
+
+            input {
+                margin-top: 10px;
+            }
+		</style>
+	</head>
+
+	<body ng-app="myApp" ng-controller="myCtrl">
+
+		<div class="div1">
+			管理信息<br />
+			<button class="btn" ng-click="piliang1()" style="margin-left: 20px;">批量删除</button>
+			<span style="margin-left: 50px;">用户名</span><input type="text" ng-model="uname" ng-keydown="inp_uname($event)" />
+			<select style="margin-left: 50px;" ng-model="paixu" ng-change="isPaixu()" ng-init="paixu='以年龄正序'">
+		    	<option>以年龄正序</option>
+		    	<option>以年龄倒序</option>
+		    </select>
+			<button style="margin-left: 80px" ng-click="add()">添加</button>
+            <!--<input type="button" style="margin-left: 80px;" ng-click="tianjia()" value="添加"/>-->
+			<table border="1px" cellspacing="0px">
+				<tr>
+					<td><input type="checkbox" /></td>
+					<td>姓名</td>
+					<td>年龄</td>
+					<td>城市</td>
+					<td>录入日期</td>
+					<td>操作</td>
+				</tr>
+				<tr ng-repeat="u in unames">
+					<td><input type="checkbox" ng-click="xuan($index)" /></td>
+					<td>{{u.uname}}</td>
+					<td>{{u.age}}</td>
+					<td>{{u.city}}</td>
+					<td>{{u.riqi|date:"yyyy-MM-dd"}}</td>
+					<td><button ng-click="xiugai($index)">修改</button><button ng-click="shanchu($index)">删除</button></td>
+				</tr>
+			</table>
+
+			<fieldset style="text-align: center;" ng-show="xs">
+				<legend>用户信息</legend>
+				姓名<input type="text" ng-model="uname_xinxi" /><br /> 年龄
+				<input type="text" ng-model="age_xinxi" /><br /> 城市
+				<input type="text" ng-model="city_xinxi" /><br />登录日期
+				<input type="date" ng-model="riqi_xinxi" /><br />
+				<input type="button" value="OK" ng-click="ok()" ng-model="i" />
+
+			</fieldset>
+		</div>
+
+		<script type="text/javascript">
+			var mo = angular.module("myApp", []);
+            mo.controller("myCtrl", function($scope) {
+
+                //初始化数据
+                var arr = [{
+                    "isChecked": false,
+                    "uname": "张三",
+                    "age": 25,
+                    "city": "北京",
+                    "riqi": new Date(231332).getTime()
+                }, {
+                    "isChecked": false,
+                    "uname": "李四",
+                    "age": 34,
+                    "city": "北京",
+                    "riqi": new Date(6436654).getTime()
+                }, {
+                    "isChecked": false,
+                    "uname": "王五",
+                    "age": 22,
+                    "city": "上海",
+                    "riqi": new Date(435435).getTime()
+                }];
+                var flag = true;
+                $scope.unames = arr;
+                //添加
+                $scope.add = function() {
+                    flag = true;
+                    $scope.xs = true;
+
+                };
+
+                //点击复选框改变选中状态
+                $scope.xuan = function($index) {
+                    arr[$index].isChecked = !arr[$index].isChecked;
+                    $scope.unames = arr;
+
+                }
+
+                //批量删除
+                $scope.piliang1 = function() {
+
+                    //遍历
+                    for (var i = arr.length - 1; i >= 0; i--) {
+                        var c = arr[i].isChecked;
+
+                        if (c) {
+                            arr.splice(i, 1);
+                        }
+                    }
+
+                    $scope.unames = arr;
+
+                }
+
+                //查询
+                $scope.inp_uname = function($event) {
+                    var arr_temp = [];
+                    var ketCode = $event.keyCode;
+
+                    if (ketCode == 13) {
+                        for (var i = 0; i < arr.length; i++) {
+                            var n = arr[i].uname.toString();
+                            if (n.indexOf($scope.uname) != -1) {
+                                arr_temp.push(arr[i]);
+                            }
+                        }
+
+                        $scope.unames = arr_temp;
+                    }
+                }
+
+                //按年龄排序
+                $scope.isPaixu = function($index) {
+                    var p = $scope.paixu;
+
+                    if (p == "以年龄正序") {
+                        arr.sort(function(a, b) {
+                            return a.age - b.age;
+                        });
+                    } else if (p == "以年龄倒序") {
+                        arr.sort(function(a, b) {
+                            return b.age - a.age;
+                        });
+                    }
+                    $scope.unames = arr;
+
+                }
+
+                //修改
+                $scope.xiugai = function($index) {
+                    flag = false;
+                    $scope.xs = true;
+                    var name1 = $scope.unames[$index].uname;
+                    var age1 = $scope.unames[$index].age;
+                    var city1 = $scope.unames[$index].city;
+                    var riqi1 = $scope.unames[$index].riqi; //  alert(name1);
+                    $scope.uname_xinxi = name1;
+                    $scope.age_xinxi = age1;
+                    $scope.city_xinxi = city1;
+                    $scope.riqi_xinxi = riqi1;
+                    $scope.i = $index;
+                    console.log(name1+"--"+age1+"--"+city1+"--"+riqi1)
+                }
+                //点击ok修改数据
+                $scope.ok = function() {
+                    if (flag) {
+                        var obj = {
+                            "uname": $scope.name_xinxi,
+                            "age": $scope.age_xinxi,
+                            "city": $scope.city_xinxi,
+                            "riqi": $scope.riqi_xinxi,
+                        };
+
+                        $scope.unames.push(obj);
+                        $scope.xs = false;
+                    } else {
+                        var newperson = {
+                            "ischecked": false,
+                            "uname":$scope.uname_xinxi,
+                            "age": $scope.age_xinxi,
+                            "city": $scope.city_xinxi,
+                            "riqi": $scope.riqi_xinxi,
+                        };
+
+
+                        arr.splice($scope.i, 1, newperson);
+                        $scope.names = arr;
+                    }
+
+                }
+                //删除
+                $scope.shanchu = function() {
+                    //遍历
+                    for (var i = arr.length - 1; i >= 0; i--) {
+                        var d = arr[i];
+
+                    }
+                    arr.splice(d, 1);
+                }
+            })
+		</script>
+	</body>
+
+</html></span>
