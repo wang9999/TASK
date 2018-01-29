@@ -88,7 +88,7 @@ var fsm =new StateMachine({
 if(speak!==null){document.getElementById("speak").style.background="#ccc";}
     $('#kill').click(function () {
         if (died == null) {
-            location.href = "https://wang9999.github.io/task/js-2/js-4.2.html";
+            location.href = "js-4.2.html";
             fsm.kill();
         }
         else {
@@ -106,6 +106,9 @@ if(speak!==null){document.getElementById("speak").style.background="#ccc";}
         }
     });
     $('#speak').click(function () {
+        ghost=sessionStorage.getItem("ghosted");
+        speak=sessionStorage.getItem("speaked");
+        console.log(speak);
         if (speak == null&&ghost!==null) {
             alert("轮流发言");
             document.getElementById("speak").style.background = "#ccc";
@@ -116,11 +119,13 @@ if(speak!==null){document.getElementById("speak").style.background="#ccc";}
         }
     });
     $('#vote').click(function () {
-
+        speak=sessionStorage.getItem("speaked");
+        console.log(speak);
         vote = sessionStorage.getItem("vote");
-        if (speak!==null){  
-            location.href = "https://wang9999.github.io/task/js-2/js-4.2.html";
-            sessionStorage.setItem("voted","voted")
+        if (speak!==null){
+            sessionStorage.setItem("voted","voted");
+            location.href = "js-4.2.html";
+
         }
         else {alert("一定要按顺序点,不然会崩")}
 

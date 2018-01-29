@@ -113,7 +113,7 @@ function star() {
             sin.push(a);
             stn = JSON.stringify(sin);
             sessionStorage.nn=stn;
-           location. href="https://wang9999.github.io/task/js-2/js-4.3.html"
+           location. href="js-4.3.html"
         }
         else  {                 //杀手杀完人之后水民人数还多于杀手人数，游戏继续，水民人数减一
             s--;
@@ -121,7 +121,7 @@ function star() {
             sin.push(a);
             stn = JSON.stringify(sin);
             sessionStorage.nn=stn;
-            location.href = "https://wang9999.github.io/task/js-2/js-4.1.html"
+            location.href = "js-4.1.html"
         }
     }
     else if(a!==null&&voted!==null){           //投票页
@@ -135,7 +135,7 @@ if(ai>-1&&kk<s&&kk!==0){                //如果选中的是杀手，同时杀�
     sin.push(a);
     stn = JSON.stringify(sin);
     sessionStorage.nn=stn;
-    location.href = "https://wang9999.github.io/task/js-2/js-4.1.html";
+    location.href = "js-4.1.html";
 }
         else  if(ai>-1&&kk==0){                 //投票选中的是杀手，同时把这个杀手杀了之后杀手人数为0，水民胜利
     sessionStorage.setItem('siller','win');
@@ -155,7 +155,7 @@ else if(ai=-1&&ss>k){                         //投票选中的是水民,同时�
     sin.push(a);
     stn = JSON.stringify(sin);
     sessionStorage.nn=stn;
-    location.href = "https://wang9999.github.io/task/js-2/js-4.1.html";
+    location.href = "js-4.1.html";
 }
         else if(ai=-1&&ss<=k){              //投票选中的是水民，杀了这个水民之后水民人数少于杀手人数，杀手胜利
     sessionStorage.setItem('killer','win');
@@ -165,22 +165,5 @@ else if(ai=-1&&ss>k){                         //投票选中的是水民,同时�
     location. href="js-4.3.html"
 }
     }
-// if(a!==null&&voted==null){
-//     sin.push(a);
-//     stn = JSON.stringify(sin);
-//     sessionStorage.nn=stn;
-//     location.href = "js-4.1.html";
-// }
-//
-//     else if(a!==null&&voted!==null){
-//     sessionStorage.removeItem("voted");
-//     sessionStorage.removeItem("speaked");
-//     sessionStorage.removeItem("ghosted");
-//     sessionStorage.removeItem("killed");
-//     sin.push(a);
-//     stn = JSON.stringify(sin);
-//     sessionStorage.nn=stn;
-//     location.href = "js-4.1.html";
-// }
 }
 

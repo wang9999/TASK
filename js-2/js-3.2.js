@@ -30,7 +30,7 @@ oDiv.appendChild(oDivnumber);
 };
 
 function star() {
-    location.href = "https://wang9999.github.io/task/js-2/js-4.1.html";
+    location.href = "js-4.1.html";
     // var strl = JSON.stringify(l);
     // sessionStorage.l = strl;
 }
