@@ -1,70 +1,76 @@
 body{
+    max-width: 780px;
+    min-width: 320px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+form{
     background:#eff0f4;
-    max-width: 780px;min-width: 320px;
-    margin: 0 auto;}
+}
 
 .box0{
     background:#5fc0cd ;
     height: 50px;
-    position: relative;
-    bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .box1{
     background: #ffffff;
     height: 60px;
     width: 85%;
-    padding: 0 0 0px 15%;
+    padding: 0 0 0 15%;
     border: none;
-    position: relative;
-    bottom: 43px;
     outline: none;
-
-    border: none;}
+   }
 .box2{background: #ffffff;
     height: 60px;
     width: 85%;
     border: none;
     outline: none;
-    position: relative;
-    bottom: 60px;
     padding: 0 0 0 15%;
-
+}
+.on{
+    color: #FFFFFF;
+}
+.all{
+    background: #eff0f4;
+    padding-bottom: 3000px;
+}
+.no{
+    height: 36px;
+    background: #eff0f4;
 }
 .box3{
     background: #5fc0cd;
     width: 100%;
     color: white;
     border: none;
-height: 60px  ;
-    position: relative;
-    bottom: 77px;
+    height: 60px  ;
 }
 .box4{
     color: white;
-
     position: fixed;
     left: 48%;
     top: -1%;
 }
 .box5{
     color: white;
-    position: relative;
-    top: 17px;
 }
 .box6{
     color: white;
+
+}
+.box7{
     position: relative;
-    bottom: 36px;
-    float: right;}
-.box7{    position: relative;
-    bottom: 87px;
+    bottom: 46px;
     left: 14px;
-width: 18px;
+    width: 18px;
 }
 .box8{
     width: 18px;
     position: relative;
-    bottom: 103px;
+    bottom: 42px;
     left: 15px;
 }
 .box9{
@@ -72,7 +78,7 @@ width: 18px;
     height: 1px;
     background: white;
     position: relative;
-    bottom: 88px;
+    bottom: 46px;
     left: 43px;
     font-size: 22px;
     color: #bababa;
@@ -82,7 +88,7 @@ width: 18px;
     height: 1px;
     background: white;
     position: relative;
-    bottom: 106px;
+    bottom: 43px;
     left: 43px;
     font-size: 22px;
     color: #bababa;
@@ -91,7 +97,4 @@ width: 18px;
     color: #5fc0cd;
     font-size: 1px;
     float: right;
-    position: relative;
-    bottom: 84px;
-    right: 10px;
 }

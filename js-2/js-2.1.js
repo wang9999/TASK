@@ -6,7 +6,7 @@
 function turn() {
     var a=document.getElementById("num").value;
     if(3<a&&a<19){
-        location.href = "https://wang9999.github.io/c1/js-2/js-3.1.html";}
+        location.href = "https://wang9999.github.io/task/js-2/js-3.1.html";}
    else {
         var b=document.getElementById("box1");
         box1.style.visibility="visible";

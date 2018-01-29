@@ -88,7 +88,7 @@ var fsm =new StateMachine({
 if(speak!==null){document.getElementById("speak").style.background="#ccc";}
     $('#kill').click(function () {
         if (died == null) {
-            location.href = "https://wang9999.github.io/c1/js-2/js-4.2.html";
+            location.href = "https://wang9999.github.io/task/js-2/js-4.2.html";
             fsm.kill();
         }
         else {
@@ -119,7 +119,7 @@ if(speak!==null){document.getElementById("speak").style.background="#ccc";}
 
         vote = sessionStorage.getItem("vote");
         if (speak!==null){  
-            location.href = "https://wang9999.github.io/c1/js-2/js-4.2.html";
+            location.href = "https://wang9999.github.io/task/js-2/js-4.2.html";
             sessionStorage.setItem("voted","voted")
         }
         else {alert("一定要按顺序点,不然会崩")}

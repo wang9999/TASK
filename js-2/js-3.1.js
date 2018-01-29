@@ -37,7 +37,7 @@ function add() {
           document.getElementById("identity").innerHTML = l[(y - 2)];
         }
         else if (i >= (2 * l.length - 1)) {
-            return location.href = "https://wang9999.github.io/c1/js-2/js-3.2.html";
+            return location.href = "https://wang9999.github.io/task/js-2/js-3.2.html";
         }
         var strl = JSON.stringify(l);
         sessionStorage.l = strl;
