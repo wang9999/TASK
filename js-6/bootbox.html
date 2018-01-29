@@ -14,8 +14,9 @@
 <button id="test" class="btn btn-default">测试</button>
 <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<!--<script src="http://bootboxjs.com/bootbox.js"></script>-->
-<script src="bootbox.min.js"></script>
+<script src="http://bootboxjs.com/bootbox.js"></script>
+<!--<script src="https://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+<!--<script src="bootbox.min.js"></script>-->
 <script>
     $(document).ready(function() {
         //bootbox.setDefaults({
@@ -61,13 +62,133 @@
 
 
     $(document).on("click", "#test", function (e) {
-        bootbox.confirm("Hello world!", function (result) {
-         if(result) {
-         alert('点击了确认按钮');
-         } else {
-         alert('点击了取消按钮');
-         }
-         });
+
+
+
+//        This is an extremely trivial example, but you can basically check the length of the selected inputs when the user clicks "OK":
+
+//        https://jsfiddle.net/tc2jpzop/
+
+//                bootbox.prompt({
+//                    title: "This is a prompt with a set of checkbox inputs!",
+//                    inputType: 'checkbox',
+//                    inputOptions: [{
+//                        text: 'Choice One',
+//                        value: '1',
+//                    }, {
+//                        text: 'Choice Two',
+//                        value: '2',
+//                    }, {
+//                        text: 'Choice Three',
+//                        value: '3',
+//                    }],
+//                    callback: function(result) {
+//                        if (result != null) {
+//                            if (result.length > 1) {
+//                                alert("Please select only one option");
+//                                return false;
+//                            } else {
+//                                // do something
+//                            }
+//                        }
+//                    }
+//                });
+
+
+
+
+
+//        bootbox.prompt({
+//            title: "Seleccione el autorizado",
+//            inputType: 'checkbox',
+//            inputOptions: jsonArray,
+//            callback: function (result) {
+//                if(result != null){
+//                    var i = parseInt(result);
+//                    $("#dni").val(data[i].dni);
+//                    $("#nombre").val(data[i].nombre);
+//                    $("#apellido").val(data[i].apellido);
+//                    $("#patente").val(data[i].patente);
+//                    $("#lote").val(data[i].lote);
+//                    $( "#dni, #nombre, #apellido, #patente" ).prop( "disabled", true );
+//                    self.id_ingreso = data[i].id;
+//                }
+//            }
+//        });
+
+
+
+        var dialog = bootbox.dialog({
+            title: 'A custom dialog with buttons and callbacks',
+            message: "<div>This dialog has buttons. Each button has it's own callback function. </div> " +
+            "<div> <input type='radio' name='one' value='one'/><input type='radio' name='one' value='two' id='two'></div>"+
+            "<div style='width: 100px;height: 100px;border: 1px #000 solid;display: none' id='text'></div>",
+
+            callback: function() {
+                $('#two').onclick=function () {
+                $('#text').style('display: block');
+            };},
+                buttons: {
+                cancel: {
+                    label: "I'm a custom cancel button!",
+                    className: 'btn-danger',
+                    callback: function(){
+                        alert('nih');
+                        Example.show('Custom cancel clicked');
+                    }
+                },
+//                noclose: {
+//                    label: "I'm a custom button, but I don't close the modal!",
+//                    className: 'btn-warning',
+//                    callback: function(){
+//                        Example.show('Custom button clicked');
+//                        return false;
+//                    }
+//                },
+                ok: {
+                    label: "I'm a custom OK button!",
+                    className: 'btn-info',
+                    callback: function(){
+                        Example.show('Custom OK clicked');
+
+                    }
+                }
+
+            }
+        });
+
+
+//        bootbox.prompt({
+//            title: "This is a prompt with a set of checkbox inputs!",
+//            inputType: 'checkbox' ,
+//            inputOptions: [
+//                {
+//                    text: 'Choice One',
+//                    value: '1',
+//                },
+//                {
+//                    text: 'Choice Two',
+//                    value: '2',
+//                },
+//                {
+//                    text: 'Choice Three',
+//                    value: '3',
+//                }
+//            ],
+//            callback: function (result) {
+//                console.log(result);
+//            }
+//        });
+
+
+
+//        bootbox.confirm("Hello world!", function (result) {
+//         if(result) {
+//         alert('点击了确认按钮');
+//         } else {
+//         alert('点击了取消按钮');
+//         }
+//         });
        /*  bootbox.dialog({
          message: "I am a custom confirm",
          title: "Confirm title",
