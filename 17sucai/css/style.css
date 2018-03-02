@@ -1,0 +1,22 @@
+@charset "utf-8";
+body{padding:0;margin:0;font:14px/1.5 arial,"microsoft yahei";text-align:center;
+    /*background:#253242;*/
+    color:#aaa;letter-spacing:1px}
+body,html{height:100%;}
+dd,div,dl,dt,form,h1,h2,h3,h4,h5,h6,input,li,p,ul{padding:0;margin:0}
+button,input,select,textarea{outline:0;resize:none}
+img{vertical-align:top;border:0}
+li,ul{list-style:none;text-transform:capitalize}
+h1,h2,h3,h4,h5,h6,i,th{font-weight:400;font-style:normal}
+a{text-decoration:none;outline:0;color:#aaa;cursor:pointer}
+a.active,a:hover{text-decoration:none}
+
+
+
+#carousel{position:relative;z-index:2;height:266px;margin-top:20px;transform-style:preserve-3d;perspective:800px; overflow: hidden;}
+#carousel img{position:absolute;left:50%;top:50%;width:266px;height:266px;margin-left:-133px;margin-top:-133px;transition:transform .5s ease-in-out;box-shadow:8px 8px 20px rgba(0,0,0,.2);cursor:pointer;border-radius: 50%}
+#bannerNav{position:relative;margin-top:20px;height:10px;padding:10px 0;text-align:center}
+#bannerNav ul li{cursor:pointer;overflow:hidden;display:inline-block;width:14px;margin:0 2px}
+#bannerNav ul li a{margin:0 auto;display:block;width:6px;height:6px;vertical-align:top;border-radius:3px;background:#5e6671;font-size:0}
+#bannerNav ul li.on a,#bannerNav ul li:hover a{background:#b4b7ba}
+#bannerNav ul li.on a{width:12px}
