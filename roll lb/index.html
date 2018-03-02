@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>jQuery超酷响应式圆形图片轮播图特效|DEMO_jQuery之家-自由分享jQuery、html5、css3的插件库</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<link href="css/mislider.css" rel="stylesheet">
+	<link href="css/mislider-skin-cameo.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400|Roboto:500' rel='stylesheet'>
+    <link href="css/styles.css" rel="stylesheet">
+	<script type="text/javascript" src="lib/modernizr/modernizr-custom.js"></script>
+</head>
+<body>
+	<div class="htmleaf-container">
+		<figure>
+		    <div class="mis-stage">
+		        <!-- The element to select and apply miSlider to - the class is optional -->
+				<!--选择和应用miSlider的元素——类是可选的-->
+		        <ol class="mis-slider">
+		            <!-- The slider element - the class is optional -->
+					<!--滑块元素-类是可选的-->
+
+		            <li class="mis-slide">
+		                <!-- A slide element - the class is optional 幻灯片元素——类是可选的-->
+		                <a href="#" class="mis-container">
+		                    <!-- A slide container - this element is optional, if absent the plugin adds it automatically -->
+							<!--一个滑动容器-这个元素是可选的，如果不存在，插件会自动添加它。-->
+		                    <figure>
+		                        <!-- Slide content - whatever you want -->
+								<!--幻灯片内容-你想要什么都行-->
+		                        <img src="images/legend-1.jpg" alt="Pink Water Lillies">
+		                        <!--<figcaption>Pink Water Lillies</figcaption>-->
+		                    </figure>
+		                </a>
+		            </li>
+		            <li class="mis-slide">
+		                <a href="#" class="mis-container">
+		                    <figure>
+		                        <img src="images/legend-2.jpg" alt="Pond with Lillies">
+		                        <!--<figcaption>Pond with Lillies</figcaption>-->
+		                    </figure>
+		                </a>
+		            </li>
+		            <li class="mis-slide">
+		                <a href="#" class="mis-container">
+		                    <figure>
+		                        <img src="images/legend-3.jpg" alt="Hidden Pond">
+		                        <!--<figcaption>Hidden Pond</figcaption>-->
+		                    </figure>
+		                </a>
+		            </li>
+		            <li class="mis-slide">
+		                <a href="#" class="mis-container">
+		                    <figure>
+		                        <img src="images/legend-4.jpg" alt="Shrine">
+		                        <!--<figcaption>Shrine</figcaption>-->
+		                    </figure>
+		                </a>
+		            </li>
+		            <li class="mis-slide">
+		                <a href="#" class="mis-container">
+		                    <figure>
+		                        <img src="images/legend-5.jpg" alt="White Water Lillies">
+		                        <!--<figcaption>White Water Lillies</figcaption>-->
+		                    </figure>
+		                </a>
+		            </li>
+		            <li class="mis-slide">
+		                <a href="#" class="mis-container">
+		                    <figure>
+		                        <img src="images/legend-6.jpg" alt="Garden Walkway">
+		                        <!--<figcaption>Garden Walkway</figcaption>-->
+		                    </figure>
+		                </a>
+		            </li>
+		            <li class="mis-slide">
+		                <a href="#" class="mis-container">
+		                    <figure>
+		                        <img src="images/legend-7.jpg" alt="Lilly with Bee">
+		                        <!--<figcaption>Lilly with Bee</figcaption>-->
+		                    </figure>
+		                </a>
+		            </li>
+					<li class="mis-slide">
+						<a href="#" class="mis-container">
+							<figure>
+								<img src="images/legend-7.jpg" alt="Lilly with Bee">
+								<!--<figcaption>Lilly with Bee</figcaption>-->
+							</figure>
+						</a>
+					</li>
+					<li class="mis-slide">
+						<a href="#" class="mis-container">
+							<figure>
+								<img src="images/legend-7.jpg" alt="Lilly with Bee">
+								<!--<figcaption>Lilly with Bee</figcaption>-->
+							</figure>
+						</a>
+					</li>
+		        </ol>
+		    </div>
+		    <!--<figcaption>miSlider Multi-item Sample</figcaption>-->
+		</figure>
+
+	</div>
+	
+	<script src="js/jquery.min.js"></script>
+	<script src="js/mislider.js"></script>
+	<script>
+        jQuery(function ($) {
+            var slider = $('.mis-stage').miSlider({
+                //  The height of the stage in px.
+				// Options: false or positive integer.
+				// false = height is calculated using maximum slide heights. Default: false
+//				高度是利用最大滑动高度来计算的。默认值:假
+                stageHeight:false,
+
+                //  Number of slides visible at one time. Options: false or positive integer. false = Fit as many as possible.  Default: 1
+                slidesOnStage: 3,
+
+                //  The location of the current slide on the stage. Options: 'left', 'right', 'center'. Defualt: 'left'
+//				当前幻灯片的位置在舞台上。选项:“左”、“右”,“中心”。Defualt:‘左’
+                slidePosition: 'center',
+
+                //  The slide to start on. Options: 'beg', 'mid', 'end' or slide number starting at 1 - '1','2','3', etc. Defualt: 'beg'
+                slideStart: 'mid',
+
+                //  The relative percentage scaling factor of the current slide - other slides are scaled down. Options: positive number 100 or higher. 100 = No scaling. Defualt: 100
+//				    当前幻灯片的相对比例缩放因子-其他幻灯片缩小。选项:正数100或更高。100 =没有扩展。Defualt:100
+                slideScaling: 150,
+
+                //  The vertical offset of the slide center as a percentage of slide height.
+				// 滑动中心的垂直偏移量为滑动高度的百分比。
+				// Options:  positive or negative number. Neg value = up. Pos value = down. 0 = No offset. Default: 0
+  		         //选项:正数或负数。否定价值=。Pos value =。0 =没有抵消。默认值:0
+                offsetV: 0,
+
+                //  Center slide contents vertically - Boolean. Default: false
+//				中心滑动内容垂直-布尔。默认值:假
+                centerV: true,
+
+                //  Opacity of the prev and next button navigation when not transitioning. Options: Number between 0 and 1. 0 (transparent) - 1 (opaque). Default: .5
+                navButtonsOpacity: 1
+            });
+        });
+    </script>
+</body>
+</html>
